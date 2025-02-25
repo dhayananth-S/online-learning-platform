@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LearnHub - Online Learning Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#" onclick="openLogin()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>Login / Sign Up</h2>
+            <input type="text" id="username" placeholder="Enter Username">
+            <button onclick="loginUser()">Login</button>
+        </div>
+    </div>
+
+    <section class="course-section">
+        <h2>Available Courses</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS, and JavaScript.</p>
+                <button onclick="startCourse('Web Development')">Start Course</button>
+            </div>
+            <div class="course-card">
+                <h3>Python Programming</h3>
+                <p>Master Python with hands-on projects.</p>
+                <button onclick="startCourse('Python Programming')">Start Course</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-section" class="hidden">
+        <h2>Course: <span id="course-title"></span></h2>
+        <video controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="showQuiz()">Take Quiz</button>
+    </section>
+
+    <section id="quiz-section" class="hidden">
+        <h2>Quiz</h2>
+        <p>What does HTML stand for?</p>
+        <button onclick="checkAnswer(true)">HyperText Markup Language</button>
+        <button onclick="checkAnswer(false)">High-Level Text Management</button>
+        <button onclick="checkAnswer(false)">Hyper Transfer Markup Logic</button>
+    </section>
+
+    <section id="certificate-section" class="hidden">
+        <h2>🎉 Congratulations, <span id="user-name"></span>! 🎉</h2>
+        <p>You have completed the course!</p>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
